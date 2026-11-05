@@ -180,6 +180,44 @@ let RAW_SHEET_DATA = {
     { name: "무지", spec: "0.4T", size: "100cmx100M", packUnit: null, price: 42000 },
     { name: "1도(눈꽃)", spec: "0.4T", size: "100cmx100M", packUnit: null, price: 56000 },
     { name: "2도(분홍꽃)", spec: "0.4T", size: "100cmx100M", packUnit: null, price: 59400 }
+  ],
+  "은박원단": [
+    { name: "은박원단", spec: "0.25T", size: "40cm x 170M", packUnit: null, price: 12000 },
+    { name: "은박원단", spec: "0.25T", size: "44cm x 170M", packUnit: null, price: 13200 },
+    { name: "은박원단", spec: "0.25T", size: "50cm x 170M", packUnit: null, price: 15000 },
+    { name: "은박원단", spec: "0.25T", size: "60cm x 170M", packUnit: null, price: 18000 },
+    { name: "은박원단", spec: "0.25T", size: "64cm x 170M", packUnit: null, price: 19200 },
+    { name: "은박원단", spec: "0.25T", size: "66cm x 170M", packUnit: null, price: 19800 },
+    { name: "은박원단", spec: "0.25T", size: "70cm x 170M", packUnit: null, price: 21000 },
+    { name: "은박원단", spec: "0.25T", size: "76cm x 170M", packUnit: null, price: 22800 },
+    { name: "은박원단", spec: "0.25T", size: "80cm x 170M", packUnit: null, price: 24000 },
+    { name: "은박원단", spec: "0.25T", size: "90cm x 170M", packUnit: null, price: 27000 },
+    { name: "은박원단", spec: "0.25T", size: "100cm x 170M", packUnit: null, price: 30000 },
+    { name: "은박원단", spec: "0.25T", size: "110cm x 170M", packUnit: null, price: 33000 },
+    { name: "은박원단", spec: "0.25T", size: "120cm x 170M", packUnit: null, price: 36000 },
+    { name: "은박원단", spec: "0.25T", size: "130cm x 170M", packUnit: null, price: 38900 },
+    { name: "은박원단", spec: "0.25T", size: "140cm x 170M", packUnit: null, price: 41900 },
+    { name: "은박원단", spec: "0.4T", size: "40cm x 170M", packUnit: null, price: 17600 },
+    { name: "은박원단", spec: "0.4T", size: "44cm x 170M", packUnit: null, price: 19300 },
+    { name: "은박원단", spec: "0.4T", size: "45cm x 170M", packUnit: null, price: 19800 },
+    { name: "은박원단", spec: "0.4T", size: "50cm x 170M", packUnit: null, price: 22000 },
+    { name: "은박원단", spec: "0.4T", size: "55cm x 170M", packUnit: null, price: 24200 },
+    { name: "은박원단", spec: "0.4T", size: "60cm x 170M", packUnit: null, price: 26400 },
+    { name: "은박원단", spec: "0.4T", size: "65cm x 170M", packUnit: null, price: 28600 },
+    { name: "은박원단", spec: "0.4T", size: "66cm x 170M", packUnit: null, price: 29000 },
+    { name: "은박원단", spec: "0.4T", size: "70cm x 170M", packUnit: null, price: 30800 },
+    { name: "은박원단", spec: "0.4T", size: "76cm x 170M", packUnit: null, price: 33400 },
+    { name: "은박원단", spec: "0.4T", size: "80cm x 170M", packUnit: null, price: 35100 },
+    { name: "은박원단", spec: "0.4T", size: "85cm x 170M", packUnit: null, price: 37300 },
+    { name: "은박원단", spec: "0.4T", size: "90cm x 170M", packUnit: null, price: 39500 },
+    { name: "은박원단", spec: "0.4T", size: "95cm x 170M", packUnit: null, price: 41700 },
+    { name: "은박원단", spec: "0.4T", size: "100cm x 170M", packUnit: null, price: 43900 },
+    { name: "은박원단", spec: "0.4T", size: "105cm x 170M", packUnit: null, price: 46100 },
+    { name: "은박원단", spec: "0.4T", size: "115cm x 170M", packUnit: null, price: 48300 },
+    { name: "은박원단", spec: "0.4T", size: "110cm x 170M", packUnit: null, price: 50500 },
+    { name: "은박원단", spec: "0.4T", size: "120cm x 170M", packUnit: null, price: 52700 },
+    { name: "은박원단", spec: "0.4T", size: "125cm x 170M", packUnit: null, price: 54900 },
+    { name: "은박원단", spec: "0.4T", size: "96cm x 170M", packUnit: null, price: 42200 }
   ]
 };
 
@@ -192,6 +230,26 @@ const state = {
   sortBy: "default", // 'default' | 'price-asc' | 'price-desc' | 'size-asc'
   estimateBag: [] // [{ id, category, name, spec, size, price, qty }]
 };
+
+function getCategoryMeta(cat) {
+  if (CATEGORY_META[cat]) {
+    return CATEGORY_META[cat];
+  }
+  // Auto-generate metadata for newly added sheets (e.g. 은박원단)
+  const safeId = "cat-" + encodeURIComponent(cat).replace(/%/g, "").toLowerCase();
+  return {
+    id: safeId,
+    name: cat,
+    subtitle: `${cat} 규격 입고단가`,
+    unitLabel: "단가",
+    specColumnName: "두께/사양",
+    sizeColumnName: "사이즈",
+    svg: `<svg class="product-render-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="18" y="18" width="44" height="44" rx="10" fill="#E8F1FA" stroke="#0066CC" stroke-width="2"/>
+      <path d="M26 34H54M26 44H46M26 54H38" stroke="#0066CC" stroke-width="2" stroke-linecap="round"/>
+    </svg>`
+  };
+}
 
 function formatKRW(num) {
   return "₩" + Number(num).toLocaleString("ko-KR");
@@ -262,7 +320,7 @@ function renderCategorySummaryCards() {
   container.innerHTML = categories
     .map((cat) => {
       const items = RAW_SHEET_DATA[cat] || [];
-      const meta = CATEGORY_META[cat];
+      const meta = getCategoryMeta(cat);
       const prices = items.map((i) => i.price);
       const minP = Math.min(...prices);
       const maxP = Math.max(...prices);
@@ -339,11 +397,27 @@ function renderFilterChips() {
     });
   }
 
-  // Update Top Global Nav active state
-  document.querySelectorAll(".global-nav-link[data-nav-cat]").forEach((navBtn) => {
-    const navCat = navBtn.getAttribute("data-nav-cat");
-    navBtn.classList.toggle("active", state.selectedCategory === navCat);
-  });
+  // Update Top Global Nav active state & links
+  const globalNavContainer = document.getElementById("globalNavLinks");
+  if (globalNavContainer) {
+    globalNavContainer.innerHTML =
+      `<li><button type="button" class="global-nav-link ${state.selectedCategory === "ALL" ? "active" : ""}" data-nav-cat="ALL">전체 품목 (${allItems.length})</button></li>` +
+      Object.keys(RAW_SHEET_DATA)
+        .map((cat) => {
+          const count = (RAW_SHEET_DATA[cat] || []).length;
+          const active = state.selectedCategory === cat ? "active" : "";
+          return `<li><button type="button" class="global-nav-link ${active}" data-nav-cat="${cat}">${cat} (${count})</button></li>`;
+        })
+        .join("");
+
+    globalNavContainer.querySelectorAll(".global-nav-link[data-nav-cat]").forEach((navBtn) => {
+      navBtn.addEventListener("click", () => {
+        state.selectedCategory = navBtn.getAttribute("data-nav-cat");
+        renderAll();
+        document.getElementById("dashboardMainSection").scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+  }
 }
 
 function renderSubgroupTableHTML(sg, cat) {
@@ -452,7 +526,7 @@ function renderBoardView(filteredItems) {
       const catItems = filteredItems.filter((i) => i.category === cat);
       if (catItems.length === 0) return "";
 
-      const meta = CATEGORY_META[cat];
+      const meta = getCategoryMeta(cat);
       const prices = catItems.map((i) => i.price);
       const minP = Math.min(...prices);
       const maxP = Math.max(...prices);
@@ -460,8 +534,9 @@ function renderBoardView(filteredItems) {
 
       // Sub-grouping logic for At-a-Glance readability
       let subGroups = [];
+      const specs = [...new Set(catItems.map((i) => i.spec).filter(Boolean))];
+
       if (cat === "에어캡롤" || cat === "에어캡원단") {
-        const specs = [...new Set(catItems.map((i) => i.spec))];
         subGroups = specs.map((sp) => ({
           title: `두께 ${sp}`,
           subtitle: cat === "에어캡롤" ? "길이 50M 롤 규격" : "길이 170M 대용량 원단",
@@ -491,10 +566,17 @@ function renderBoardView(filteredItems) {
         if (muji.length) subGroups.push({ title: "무지 쇼핑백 시리즈", subtitle: "130g 규격 (mm)", items: muji });
         if (dosirak.length) subGroups.push({ title: "도시락 쇼핑백 시리즈", subtitle: "130g 규격 (mm)", items: dosirak });
         if (mart.length) subGroups.push({ title: "마트 쇼핑백 시리즈", subtitle: "130g 규격 (mm)", items: mart });
+      } else if (specs.length > 1) {
+        // Automatically subgroup by thickness/spec for other multi-spec sheets (e.g. 은박원단)
+        subGroups = specs.map((sp) => ({
+          title: `두께/사양 ${sp}`,
+          subtitle: `${cat} ${sp} 규격`,
+          items: catItems.filter((i) => i.spec === sp)
+        }));
       } else {
         subGroups.push({
           title: `${cat} 전 규격`,
-          subtitle: "두께 0.4T · 100cm x 100M",
+          subtitle: `${cat} 입고단가 목록`,
           items: catItems
         });
       }
@@ -857,20 +939,39 @@ function parseCSVRows(csvText) {
   });
 }
 
+async function discoverSheetNames() {
+  try {
+    // 1. Try fetching Google Sheets edit HTML which contains sheet tab captions
+    const resp = await fetch(`https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/edit`, { cache: "no-store" });
+    if (resp.ok) {
+      const html = await resp.text();
+      const parts = html.split('docs-sheet-tab-caption">').slice(1);
+      const names = parts.map((p) => p.split("</div>")[0].trim()).filter(Boolean);
+      if (names.length > 0) {
+        return [...new Set(names)];
+      }
+    }
+  } catch (e) {
+    // fallback if CORS or network error
+  }
+  // Fallback to currently known categories
+  return Object.keys(RAW_SHEET_DATA);
+}
+
 async function syncFromGoogleSheets() {
   const syncBtn = document.getElementById("syncSheetBtn");
   const statusText = document.getElementById("syncStatusText");
   if (syncBtn) syncBtn.textContent = "동기화 중...";
-  if (statusText) statusText.textContent = "Google Sheets 데이터 확인 중...";
-
-  const sheetNames = Object.keys(CATEGORY_META);
-  const updatedData = {};
+  if (statusText) statusText.textContent = "Google Sheets 탭 목록 확인 중...";
 
   try {
+    const sheetNames = await discoverSheetNames();
+    const updatedData = {};
+
     for (const sheetName of sheetNames) {
       const url = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(sheetName)}`;
       const response = await fetch(url, { cache: "no-store" });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      if (!response.ok) continue;
       const csvText = await response.text();
       const rows = parseCSVRows(csvText);
 
@@ -884,19 +985,20 @@ async function syncFromGoogleSheets() {
           if (!isNaN(priceVal) && priceVal > 0) {
             parsedItems.push({
               name: r[0],
-              spec: r[1],
-              size: r[2],
+              spec: r[1] || "",
+              size: r[2] || "",
               packUnit: !isNaN(packVal) ? packVal : null,
               price: priceVal
             });
           }
         } else {
+          // Standard layout: Col 0: 품명, Col 1: 두께/재질, Col 2: 사이즈, Col 3: 입고단가
           const priceVal = parseFloat(String(r[3] || "0").replace(/,/g, ""));
           if (!isNaN(priceVal) && priceVal > 0) {
             parsedItems.push({
               name: r[0],
-              spec: r[1],
-              size: r[2],
+              spec: r[1] || "",
+              size: r[2] || "",
               packUnit: null,
               price: priceVal
             });
@@ -908,7 +1010,7 @@ async function syncFromGoogleSheets() {
       }
     }
 
-    if (Object.keys(updatedData).length === sheetNames.length) {
+    if (Object.keys(updatedData).length > 0) {
       RAW_SHEET_DATA = updatedData;
       renderAll();
       const now = new Date();
