@@ -432,8 +432,8 @@ function renderSubgroupTableHTML(sg, cat) {
         <th style="width: 80px;">호수</th>
         <th>사이즈 (cm)</th>
         <th class="text-right" style="width: 100px;">포장단위</th>
-        <th class="text-right" style="width: 110px;">입고단가</th>
-        <th class="text-right" style="width: 120px;">1묶음 합계</th>
+        <th class="text-right" style="width: 130px;">입고단가 (VAT별도)</th>
+        <th class="text-right" style="width: 130px;">1묶음 합계 (VAT별도)</th>
       </tr>
     `;
   } else if (isBag) {
@@ -442,7 +442,7 @@ function renderSubgroupTableHTML(sg, cat) {
         <th>품명</th>
         <th>사이즈 규격 (mm)</th>
         <th style="width: 80px;">두께</th>
-        <th class="text-right" style="width: 120px;">입고단가</th>
+        <th class="text-right" style="width: 130px;">입고단가 (VAT별도)</th>
       </tr>
     `;
   } else if (isRollOrFabric) {
@@ -450,7 +450,7 @@ function renderSubgroupTableHTML(sg, cat) {
       <tr>
         <th>사이즈 규격 (폭 × 길이)</th>
         <th style="width: 90px;">두께</th>
-        <th class="text-right" style="width: 120px;">입고단가</th>
+        <th class="text-right" style="width: 130px;">입고단가 (VAT별도)</th>
       </tr>
     `;
   } else {
@@ -458,7 +458,7 @@ function renderSubgroupTableHTML(sg, cat) {
       <tr>
         <th>품명 및 인쇄 사양</th>
         <th>사이즈 규격</th>
-        <th class="text-right" style="width: 120px;">입고단가</th>
+        <th class="text-right" style="width: 130px;">입고단가 (VAT별도)</th>
       </tr>
     `;
   }
@@ -590,18 +590,19 @@ function renderBoardView(filteredItems) {
               <h3 class="category-block-title">${cat}</h3>
               <span class="category-badge-pill">${catItems.length}개 품목</span>
               <span class="category-badge-pill">${meta.unitLabel}</span>
+              <span class="category-badge-pill" style="color: var(--color-primary); font-weight: 600;">부가세 별도</span>
             </div>
             <div class="category-summary-stats">
               <div class="stat-item">
-                <span class="stat-label">최저 입고단가</span>
+                <span class="stat-label">최저 단가(VAT별도)</span>
                 <span class="stat-value">${formatKRW(minP)}</span>
               </div>
               <div class="stat-item">
-                <span class="stat-label">평균 입고단가</span>
+                <span class="stat-label">평균 단가(VAT별도)</span>
                 <span class="stat-value">${formatKRW(avgP)}</span>
               </div>
               <div class="stat-item">
-                <span class="stat-label">최고 입고단가</span>
+                <span class="stat-label">최고 단가(VAT별도)</span>
                 <span class="stat-value">${formatKRW(maxP)}</span>
               </div>
             </div>
