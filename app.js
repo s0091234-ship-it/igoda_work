@@ -429,11 +429,11 @@ function renderSubgroupTableHTML(sg, cat) {
   if (isPet) {
     theadHTML = `
       <tr>
-        <th style="width: 80px;">호수</th>
+        <th style="width: 70px;">호수</th>
         <th>사이즈 (cm)</th>
-        <th class="text-right" style="width: 100px;">포장단위</th>
-        <th class="text-right" style="width: 130px;">입고단가 (VAT별도)</th>
-        <th class="text-right" style="width: 130px;">1묶음 합계 (VAT별도)</th>
+        <th class="text-right" style="width: 85px;">포장단위</th>
+        <th class="text-right" style="width: 135px; white-space: nowrap;">입고단가 <span style="font-size: 11px; font-weight: normal; color: var(--color-ink-muted-48);">(VAT별도)</span></th>
+        <th class="text-right" style="width: 145px; white-space: nowrap;">1묶음 합계 <span style="font-size: 11px; font-weight: normal; color: var(--color-ink-muted-48);">(VAT별도)</span></th>
       </tr>
     `;
   } else if (isBag) {
@@ -441,16 +441,16 @@ function renderSubgroupTableHTML(sg, cat) {
       <tr>
         <th>품명</th>
         <th>사이즈 규격 (mm)</th>
-        <th style="width: 80px;">두께</th>
-        <th class="text-right" style="width: 130px;">입고단가 (VAT별도)</th>
+        <th style="width: 70px;">두께</th>
+        <th class="text-right" style="width: 135px; white-space: nowrap;">입고단가 <span style="font-size: 11px; font-weight: normal; color: var(--color-ink-muted-48);">(VAT별도)</span></th>
       </tr>
     `;
   } else if (isRollOrFabric) {
     theadHTML = `
       <tr>
         <th>사이즈 규격 (폭 × 길이)</th>
-        <th style="width: 90px;">두께</th>
-        <th class="text-right" style="width: 130px;">입고단가 (VAT별도)</th>
+        <th style="width: 75px;">두께</th>
+        <th class="text-right" style="width: 135px; white-space: nowrap;">입고단가 <span style="font-size: 11px; font-weight: normal; color: var(--color-ink-muted-48);">(VAT별도)</span></th>
       </tr>
     `;
   } else {
@@ -458,7 +458,7 @@ function renderSubgroupTableHTML(sg, cat) {
       <tr>
         <th>품명 및 인쇄 사양</th>
         <th>사이즈 규격</th>
-        <th class="text-right" style="width: 130px;">입고단가 (VAT별도)</th>
+        <th class="text-right" style="width: 135px; white-space: nowrap;">입고단가 <span style="font-size: 11px; font-weight: normal; color: var(--color-ink-muted-48);">(VAT별도)</span></th>
       </tr>
     `;
   }
