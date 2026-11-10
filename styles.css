@@ -874,6 +874,8 @@ body {
 }
 
 .subgroup-panel {
+  min-width: 0;
+  box-sizing: border-box;
   background-color: var(--color-canvas-parchment);
   border-radius: var(--rounded-lg);
   padding: 20px;

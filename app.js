@@ -3675,17 +3675,17 @@ function renderBoardView(filteredItems) {
           items: catItems
         });
       } else if (cat.includes("박스(에스아이비)")) {
-        subGroups = specs.sort().map((sp) => ({
-          title: `재질 ${sp}`,
-          subtitle: `SIB 골판지 규격 (${catItems.filter((i) => i.spec === sp).length}종 · 무료배송)`,
-          items: catItems.filter((i) => i.spec === sp)
-        }));
+        subGroups.push({
+          title: "박스(에스아이비) 전 규격",
+          subtitle: `시트 원본 품명 순서 (${catItems.length}종 · 무료배송)`,
+          items: catItems
+        });
       } else if (cat === "이고다박스") {
-        subGroups = specs.sort().map((sp) => ({
-          title: `골 종류 ${sp}`,
-          subtitle: `이고다 규격박스 (${catItems.filter((i) => i.spec === sp).length}종)`,
-          items: catItems.filter((i) => i.spec === sp)
-        }));
+        subGroups.push({
+          title: "이고다박스 전 규격",
+          subtitle: `시트 원본 품명 순서 (${catItems.length}종)`,
+          items: catItems
+        });
       } else if (specs.length > 1) {
         subGroups = specs.map((sp) => ({
           title: `두께/사양 ${sp}`,
