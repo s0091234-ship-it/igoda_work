@@ -131,7 +131,6 @@ const CATEGORY_META = {
       <circle cx="40" cy="40" r="8" fill="#FAF6F0" stroke="#0066CC" stroke-width="1.5"/>
       <path d="M58 24L68 34" stroke="#0066CC" stroke-width="2.5" stroke-linecap="round"/>
     </svg>`
-  }
   },
   "에어캡패드": {
     id: "aircap-pad",
@@ -3548,10 +3547,10 @@ function renderSubgroupTableHTML(sg, cat) {
     theadHTML += `<th class="text-right" style="width: 80px;">포장단위</th>`;
   }
 
-  theadHTML += `<th class="text-right" style="width: 130px; white-space: nowrap;">입고단가 <span style="font-size: 11px; font-weight: normal; color: var(--color-ink-muted-48);">(VAT별도)</span></th>`;
+  theadHTML += `<th class="text-right" style="min-width: 130px; white-space: nowrap;">입고단가 <span class="vat-tag">(VAT별도)</span></th>`;
 
   if (hasPack) {
-    theadHTML += `<th class="text-right" style="width: 135px; white-space: nowrap;">1묶음 합계 <span style="font-size: 11px; font-weight: normal; color: var(--color-ink-muted-48);">(VAT별도)</span></th>`;
+    theadHTML += `<th class="text-right" style="min-width: 140px; white-space: nowrap;">1묶음 합계 <span class="vat-tag">(VAT별도)</span></th>`;
   }
 
   if (hasShipping) {
