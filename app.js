@@ -3307,14 +3307,241 @@ let RAW_SHEET_DATA = {
   ]
 };
 
+// Default vendor data (fallback & base data from '업체정보' sheet)
+const DEFAULT_VENDOR_DATA = {
+  "에어캡롤(묶음)": {
+    vendor: "(주)그래이거",
+    address: "경기도 하남시 하남대로 947, 비동 15층 1502호 (풍산동, 하남테크노밸리 U1 CENTER)",
+    contactPerson: "김영실 과장",
+    phone: "010-2815-0517",
+    email: "hoho7960@naver.com",
+    note: ""
+  },
+  "에어캡롤(낱개)": {
+    vendor: "(주)그래이거",
+    address: "경기도 하남시 하남대로 947, 비동 15층 1502호 (풍산동, 하남테크노밸리 U1 CENTER)",
+    contactPerson: "김영실 과장",
+    phone: "010-2815-0517",
+    email: "hoho7960@naver.com",
+    note: ""
+  },
+  "에어캡원단": {
+    vendor: "(주)그래이거",
+    address: "경기도 하남시 하남대로 947, 비동 15층 1502호 (풍산동, 하남테크노밸리 U1 CENTER)",
+    contactPerson: "김영실 과장",
+    phone: "010-2815-0517",
+    email: "hoho7960@naver.com",
+    note: ""
+  },
+  "에어캡패드": {
+    vendor: "(주)그래이거",
+    address: "경기도 하남시 하남대로 947, 비동 15층 1502호 (풍산동, 하남테크노밸리 U1 CENTER)",
+    contactPerson: "김영실 과장",
+    phone: "010-2815-0517",
+    email: "hoho7960@naver.com",
+    note: ""
+  },
+  "PET안전봉투(낱개)": {
+    vendor: "일석공업사",
+    address: "인천시 남동구 고잔동 666-13",
+    contactPerson: "김민준 과장",
+    phone: "010-3667-3647",
+    email: "is216644@naver.com",
+    note: ""
+  },
+  "PET안전봉투(묶음)": {
+    vendor: "일석공업사",
+    address: "인천시 남동구 고잔동 666-13",
+    contactPerson: "김민준 과장",
+    phone: "010-3667-3647",
+    email: "is216644@naver.com",
+    note: ""
+  },
+  "종이쇼핑백": {
+    vendor: "오즐바이오",
+    address: "경기도 파주시 문산읍 사목로 184-54",
+    contactPerson: "실장님",
+    phone: "010-2727-8969",
+    email: "amore4600@hanmail.net",
+    note: ""
+  },
+  "단열에어캡": {
+    vendor: "(주)한국에어론",
+    address: "경기도 광주시 오포읍 매자리길27번길 10",
+    contactPerson: "안성진 과장",
+    phone: "010-8226-5018",
+    email: "hkair9951@hanmeil.net",
+    note: ""
+  },
+  "은박원단": {
+    vendor: "(주)이루케미칼",
+    address: "경기도 안성시 보개면 보개산로 160-22",
+    contactPerson: "김고은 과장",
+    phone: "010-8126-6546",
+    email: "leeru100@hanmail.net",
+    note: ""
+  },
+  "박스테이프": {
+    vendor: "금성케이엔티",
+    address: "경기도 광주시 오포읍 오포로 593",
+    contactPerson: "조대리",
+    phone: "010-3370-8823",
+    email: "tapeknt@naver.com",
+    note: ""
+  },
+  "박스(에스아이비)": {
+    vendor: "에스아이비",
+    address: "경기도 평택시 청북읍 청북중앙로 443 （고잔리 631-16 B동）",
+    contactPerson: "박춘수 전무",
+    phone: "010-4288-0654",
+    email: "sib5599@nate.com",
+    note: ""
+  },
+  "이고다박스": {
+    vendor: "삼보판지",
+    address: "경기도 시흥시 공단1대로28범길 120",
+    contactPerson: "박상훈 부장",
+    phone: "010-6247-7858",
+    email: "fish981107@isambo.com",
+    note: ""
+  }
+};
+
 // Application State
 const state = {
   selectedCategory: "ALL",
   selectedSpec: "ALL",
   searchQuery: "",
   viewMode: "board",
-  sortBy: "default"
+  sortBy: "default",
+  vendorData: { ...DEFAULT_VENDOR_DATA }
 };
+
+function escapeHTML(str) {
+  if (!str) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function showToast(message) {
+  const container = document.getElementById("toastContainer");
+  if (!container) return;
+
+  const toast = document.createElement("div");
+  toast.className = "toast-notification";
+  toast.textContent = message;
+  container.appendChild(toast);
+
+  setTimeout(() => {
+    toast.remove();
+  }, 2400);
+}
+
+function copyToClipboard(text, label = "내용") {
+  if (!text) return;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(
+      () => {
+        showToast(`✓ ${label}가 복사되었습니다: ${text}`);
+      },
+      () => {
+        fallbackCopy(text, label);
+      }
+    );
+  } else {
+    fallbackCopy(text, label);
+  }
+}
+
+function fallbackCopy(text, label) {
+  try {
+    const tempInput = document.createElement("textarea");
+    tempInput.value = text;
+    tempInput.style.position = "fixed";
+    tempInput.style.left = "-9999px";
+    document.body.appendChild(tempInput);
+    tempInput.focus();
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+    showToast(`✓ ${label}가 복사되었습니다: ${text}`);
+  } catch (err) {
+    showToast(`복사에 실패했습니다. 수동으로 복사해 주세요.`);
+  }
+}
+
+function renderVendorCardHTML(cat) {
+  const v = state.vendorData[cat];
+  if (!v || (!v.vendor && !v.contactPerson && !v.phone && !v.address && !v.email)) {
+    return "";
+  }
+
+  const cleanPhone = v.phone ? v.phone.replace(/[^0-9]/g, "") : "";
+  const phoneLink = v.phone
+    ? `<a href="tel:${cleanPhone}" class="phone-link">${escapeHTML(v.phone)}</a>`
+    : "";
+  const emailLink = v.email
+    ? `<a href="mailto:${escapeHTML(v.email)}" class="phone-link">${escapeHTML(v.email)}</a>`
+    : "";
+  const noteBadge = v.note
+    ? `<div class="vendor-note-wrap"><span>📝 ${escapeHTML(v.note)}</span></div>`
+    : "";
+
+  return `
+    <div class="category-vendor-card">
+      <div class="vendor-card-header">
+        <div class="vendor-brand-group">
+          <span class="vendor-badge">🏢 입고처: ${escapeHTML(v.vendor || "지정 정보 없음")}</span>
+        </div>
+        <div class="vendor-contact-group">
+          ${v.contactPerson ? `
+            <div class="vendor-contact-item">
+              <span class="label">담당자</span>
+              <span class="value">👤 ${escapeHTML(v.contactPerson)}</span>
+            </div>
+          ` : ""}
+          ${v.phone ? `
+            <div class="vendor-contact-item">
+              <span class="label">연락처</span>
+              <span class="value">📞 ${phoneLink}</span>
+              <button type="button" class="copy-pill-btn" data-copy-text="${escapeHTML(v.phone)}" data-copy-label="연락처" title="연락처 복사">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                복사
+              </button>
+            </div>
+          ` : ""}
+          ${v.email ? `
+            <div class="vendor-contact-item">
+              <span class="label">이메일</span>
+              <span class="value">✉️ ${emailLink}</span>
+              <button type="button" class="copy-pill-btn" data-copy-text="${escapeHTML(v.email)}" data-copy-label="이메일" title="이메일 복사">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                복사
+              </button>
+            </div>
+          ` : ""}
+        </div>
+      </div>
+      <div class="vendor-card-body">
+        <div class="vendor-address-wrap">
+          <span class="label">📍 입고처 주소</span>
+          <span class="address-text">${escapeHTML(v.address || "주소 미입력")}</span>
+          ${v.address ? `
+            <button type="button" class="copy-pill-btn" data-copy-text="${escapeHTML(v.address)}" data-copy-label="주소" title="주소 복사">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              주소 복사
+            </button>
+          ` : ""}
+        </div>
+        ${noteBadge}
+      </div>
+    </div>
+  `;
+}
 
 function getCategoryMeta(cat) {
   if (CATEGORY_META[cat]) {
@@ -3727,6 +3954,8 @@ function renderBoardView(filteredItems) {
             </div>
           </div>
 
+          ${renderVendorCardHTML(cat)}
+
           <div class="${gridClass}">
             ${subGroups
               .map(
@@ -3811,6 +4040,7 @@ function parseCSVRows(csvText) {
 }
 
 async function discoverSheetNames() {
+  const baseTabs = [...Object.keys(RAW_SHEET_DATA), "업체정보"];
   try {
     const resp = await fetch(`https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/edit`, { cache: "no-store" });
     if (resp.ok) {
@@ -3818,13 +4048,14 @@ async function discoverSheetNames() {
       const parts = html.split('docs-sheet-tab-caption">').slice(1);
       const names = parts.map((p) => p.split("</div>")[0].trim()).filter(Boolean);
       if (names.length > 0) {
+        if (!names.includes("업체정보")) names.push("업체정보");
         return [...new Set(names)];
       }
     }
   } catch (e) {
     // fallback if CORS or network error
   }
-  return Object.keys(RAW_SHEET_DATA);
+  return baseTabs;
 }
 
 async function syncFromGoogleSheets() {
@@ -3845,6 +4076,44 @@ async function syncFromGoogleSheets() {
       const rows = parseCSVRows(csvText);
 
       if (rows.length < 2) continue;
+
+      // Handle dedicated Vendor Info sheet
+      if (sheetName === "업체정보" || sheetName.includes("업체") || sheetName.includes("입고처")) {
+        const vHeaders = rows[0].map((h) => h.trim());
+        let catCol = -1, vendorCol = -1, addrCol = -1, personCol = -1, phoneCol = -1, emailCol = -1, noteCol = -1;
+        vHeaders.forEach((h, idx) => {
+          const lh = h.toLowerCase();
+          if (h.includes("품목") || h.includes("시트") || h.includes("카테고리")) catCol = idx;
+          else if (h.includes("입고처") || h.includes("업체") || h.includes("상호")) vendorCol = idx;
+          else if (h.includes("주소") || h.includes("위치")) addrCol = idx;
+          else if (h.includes("담당") || h.includes("성명") || h.includes("이름")) personCol = idx;
+          else if (h.includes("연락") || h.includes("전화") || h.includes("번호") || h.includes("핸드폰")) phoneCol = idx;
+          else if (h.includes("이메일") || h.includes("메일") || lh.includes("email") || lh.includes("mail")) emailCol = idx;
+          else if (h.includes("비고") || h.includes("메모") || h.includes("참고")) noteCol = idx;
+        });
+
+        if (catCol === -1) catCol = 0;
+        if (vendorCol === -1) vendorCol = 1;
+        if (addrCol === -1) addrCol = 2;
+        if (personCol === -1) personCol = 3;
+        if (phoneCol === -1) phoneCol = 4;
+
+        for (let i = 1; i < rows.length; i++) {
+          const r = rows[i];
+          const catName = r[catCol] ? r[catCol].trim() : "";
+          if (!catName || catName.includes("품목")) continue;
+
+          state.vendorData[catName] = {
+            vendor: vendorCol < r.length && r[vendorCol] ? r[vendorCol].trim() : "",
+            address: addrCol < r.length && r[addrCol] ? r[addrCol].trim() : "",
+            contactPerson: personCol < r.length && r[personCol] ? r[personCol].trim() : "",
+            phone: phoneCol < r.length && r[phoneCol] ? r[phoneCol].trim() : "",
+            email: emailCol !== -1 && emailCol < r.length && r[emailCol] ? r[emailCol].trim() : "",
+            note: noteCol !== -1 && noteCol < r.length && r[noteCol] ? r[noteCol].trim() : ""
+          };
+        }
+        continue;
+      }
 
       const headers = rows[0].map((h) => h.trim());
       let nameIdx = 0;
@@ -3989,6 +4258,15 @@ document.addEventListener("DOMContentLoaded", () => {
   if (csvBtn) {
     csvBtn.addEventListener("click", downloadFilteredCSV);
   }
+
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-copy-text]");
+    if (btn) {
+      const text = btn.getAttribute("data-copy-text");
+      const label = btn.getAttribute("data-copy-label") || "내용";
+      copyToClipboard(text, label);
+    }
+  });
 
   renderAll();
   syncFromGoogleSheets();

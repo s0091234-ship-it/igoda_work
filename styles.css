@@ -860,6 +860,196 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
+/* ==========================================================================
+   CATEGORY VENDOR CARD (입고처 / 담당자 / 연락처 / 주소)
+   ========================================================================== */
+
+.category-vendor-card {
+  background-color: #FAFAFC;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--rounded-md);
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.vendor-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--color-hairline-soft);
+}
+
+.vendor-brand-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.vendor-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0066CC;
+  background-color: #EBF3FC;
+  padding: 4px 10px;
+  border-radius: var(--rounded-pill);
+}
+
+.vendor-contact-group {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--color-ink);
+}
+
+.vendor-contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vendor-contact-item .label {
+  color: var(--color-ink-muted-48);
+  font-size: 12px;
+}
+
+.vendor-contact-item .value {
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.vendor-contact-item a.phone-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.vendor-contact-item a.phone-link:hover {
+  text-decoration: underline;
+}
+
+.vendor-card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+
+.vendor-address-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.vendor-address-wrap .label {
+  color: var(--color-ink-muted-48);
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.vendor-address-wrap .address-text {
+  color: var(--color-ink);
+  font-size: 13px;
+}
+
+.vendor-note-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--color-ink-muted-80);
+  background: var(--color-surface-pearl);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.copy-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #0066CC;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 102, 204, 0.3);
+  border-radius: var(--rounded-pill);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  line-height: 1.2;
+}
+
+.copy-pill-btn:hover {
+  background-color: #0066CC;
+  color: #FFFFFF;
+  border-color: #0066CC;
+}
+
+.copy-pill-btn:active {
+  transform: scale(0.96);
+}
+
+/* Toast Notification */
+.toast-container {
+  position: fixed;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.toast-notification {
+  background: rgba(29, 29, 31, 0.94);
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 24px;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: toastSlideUp 2.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  pointer-events: auto;
+}
+
+@keyframes toastSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.96);
+  }
+}
+
 /* Thickness / Sub-group split inside a category */
 .subgroup-grid-2col {
   display: grid;
