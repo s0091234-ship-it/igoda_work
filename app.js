@@ -3883,18 +3883,17 @@ function renderBoardView(filteredItems) {
           });
         }
       } else if (cat === "종이쇼핑백") {
-        const muji = catItems.filter((i) => i.name.startsWith("무지"));
-        const dosirak = catItems.filter((i) => i.name.startsWith("도시락"));
-        const mart = catItems.filter((i) => i.name.startsWith("마트"));
-        if (muji.length) subGroups.push({ title: "무지 쇼핑백 시리즈", subtitle: "130g 규격 (mm)", items: muji });
-        if (dosirak.length) subGroups.push({ title: "도시락 쇼핑백 시리즈", subtitle: "130g 규격 (mm)", items: dosirak });
-        if (mart.length) subGroups.push({ title: "마트 쇼핑백 시리즈", subtitle: "130g 규격 (mm)", items: mart });
+        subGroups.push({
+          title: "종이쇼핑백 전 규격",
+          subtitle: `시트 원본 품명 순서 (${catItems.length}종)`,
+          items: catItems
+        });
       } else if (cat === "에어캡패드") {
-        subGroups = specs.map((sp) => ({
-          title: `패드 두께 ${sp}`,
-          subtitle: `에어캡패드 ${sp} 규격 (호수별)`,
-          items: catItems.filter((i) => i.spec === sp)
-        }));
+        subGroups.push({
+          title: "에어캡패드 전 규격",
+          subtitle: `시트 원본 품명 순서 (0.2T · 0.4T · 총 ${catItems.length}종)`,
+          items: catItems
+        });
       } else if (cat === "박스테이프") {
         subGroups.push({
           title: "박스테이프 전 규격",
