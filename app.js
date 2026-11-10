@@ -132,6 +132,49 @@ const CATEGORY_META = {
       <path d="M58 24L68 34" stroke="#0066CC" stroke-width="2.5" stroke-linecap="round"/>
     </svg>`
   }
+  },
+  "에어캡패드": {
+    id: "aircap-pad",
+    name: "에어캡패드",
+    subtitle: "1호 ~ 13호 재단 패드 (0.2T / 0.4T)",
+    unitLabel: "장당 단가",
+    specColumnName: "두께",
+    sizeColumnName: "사이즈(cm)",
+    svg: `<svg class="product-render-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="16" y="20" width="48" height="40" rx="4" fill="#E8F1FA" stroke="#0066CC" stroke-width="2"/>
+      <line x1="24" y1="30" x2="56" y2="30" stroke="#0066CC" stroke-width="1.8" stroke-dasharray="3 3"/>
+      <line x1="24" y1="40" x2="56" y2="40" stroke="#0066CC" stroke-width="1.8" stroke-dasharray="3 3"/>
+      <line x1="24" y1="50" x2="56" y2="50" stroke="#0066CC" stroke-width="1.8" stroke-dasharray="3 3"/>
+    </svg>`
+  },
+  "박스(에스아이비)": {
+    id: "box-sib",
+    name: "박스(에스아이비)",
+    subtitle: "SIB 골판지 택배박스 (200여종 · 무료배송)",
+    unitLabel: "묶음 단가",
+    specColumnName: "재질/골",
+    sizeColumnName: "사이즈(mm)",
+    svg: `<svg class="product-render-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 30L40 16L64 30L40 44L16 30Z" fill="#D9A86C" stroke="#1D1D1F" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M16 30V56L40 70V44L16 30Z" fill="#C69153" stroke="#1D1D1F" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M64 30V56L40 70V44L64 30Z" fill="#B37D42" stroke="#1D1D1F" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M30 23L54 37" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-opacity="0.6"/>
+    </svg>`
+  },
+  "이고다박스": {
+    id: "box-igoda",
+    name: "이고다박스",
+    subtitle: "이고다 자체 규격 박스 (A골 · B골 · DW골)",
+    unitLabel: "장당 단가",
+    specColumnName: "골 종류",
+    sizeColumnName: "사이즈(mm)",
+    svg: `<svg class="product-render-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="18" y="20" width="44" height="44" rx="4" fill="#EDD5B3" stroke="#1D1D1F" stroke-width="2"/>
+      <path d="M18 34H62M40 34V64" stroke="#1D1D1F" stroke-width="1.8"/>
+      <path d="M28 20V34M52 20V34" stroke="#1D1D1F" stroke-width="1.5"/>
+      <circle cx="40" cy="49" r="4" fill="#0066CC"/>
+    </svg>`
+  }
 };
 
 let RAW_SHEET_DATA = {
@@ -587,6 +630,216 @@ let RAW_SHEET_DATA = {
       "packUnit": null,
       "price": 42200.0,
       "shipping": null
+    }
+  ],
+  "에어캡패드": [
+    {
+      "name": "에어캡패드 1호",
+      "spec": "0.2T",
+      "size": "15x25",
+      "packUnit": 1200.0,
+      "price": 15.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 2호",
+      "spec": "0.2T",
+      "size": "20x30",
+      "packUnit": 750.0,
+      "price": 19.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 3호",
+      "spec": "0.2T",
+      "size": "20x45",
+      "packUnit": 450.0,
+      "price": 26.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 4호",
+      "spec": "0.2T",
+      "size": "20x50",
+      "packUnit": 450.0,
+      "price": 28.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 5호",
+      "spec": "0.2T",
+      "size": "25x30",
+      "packUnit": 600.0,
+      "price": 23.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 6호",
+      "spec": "0.2T",
+      "size": "25x40",
+      "packUnit": 300.0,
+      "price": 28.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 7호",
+      "spec": "0.2T",
+      "size": "25x60",
+      "packUnit": 300.0,
+      "price": 34.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 8호",
+      "spec": "0.2T",
+      "size": "25x60",
+      "packUnit": 300.0,
+      "price": 39.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 9호",
+      "spec": "0.2T",
+      "size": "25x70",
+      "packUnit": 200.0,
+      "price": 44.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 10호",
+      "spec": "0.2T",
+      "size": "30x40",
+      "packUnit": 300.0,
+      "price": 33.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 11호",
+      "spec": "0.2T",
+      "size": "30x50",
+      "packUnit": 300.0,
+      "price": 39.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 12호",
+      "spec": "0.2T",
+      "size": "30x60",
+      "packUnit": 200.0,
+      "price": 45.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 13호",
+      "spec": "0.2T",
+      "size": "30x70",
+      "packUnit": 200.0,
+      "price": 55.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 14호",
+      "spec": "0.2T",
+      "size": "35x40",
+      "packUnit": 200.0,
+      "price": 37.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 15호",
+      "spec": "0.2T",
+      "size": "50x50",
+      "packUnit": 150.0,
+      "price": 63.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 16호",
+      "spec": "0.2T",
+      "size": "50x60",
+      "packUnit": 150.0,
+      "price": 74.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 17호",
+      "spec": "0.2T",
+      "size": "50x70",
+      "packUnit": 100.0,
+      "price": 86.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 18호",
+      "spec": "0.2T",
+      "size": "60x70",
+      "packUnit": 100.0,
+      "price": 101.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 1호",
+      "spec": "0.4T",
+      "size": "15x25",
+      "packUnit": 600.0,
+      "price": 19.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 2호",
+      "spec": "0.4T",
+      "size": "20x30",
+      "packUnit": 600.0,
+      "price": 26.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 3호",
+      "spec": "0.4T",
+      "size": "20x45",
+      "packUnit": 450.0,
+      "price": 37.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 4호",
+      "spec": "0.4T",
+      "size": "20x50",
+      "packUnit": 450.0,
+      "price": 40.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 5호",
+      "spec": "0.4T",
+      "size": "25x50",
+      "packUnit": 300.0,
+      "price": 50.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 6호",
+      "spec": "0.4T",
+      "size": "25x60",
+      "packUnit": 300.0,
+      "price": 58.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 7호",
+      "spec": "0.4T",
+      "size": "30x60",
+      "packUnit": 200.0,
+      "price": 69.0,
+      "shipping": 3500.0
+    },
+    {
+      "name": "에어캡패드 8호",
+      "spec": "0.4T",
+      "size": "60x70",
+      "packUnit": 100.0,
+      "price": 158.0,
+      "shipping": 3500.0
     }
   ],
   "PET안전봉투(낱개)": [
@@ -1256,6 +1509,1802 @@ let RAW_SHEET_DATA = {
       "price": 384.0,
       "shipping": 3300.0
     }
+  ],
+  "박스(에스아이비)": [
+    {
+      "name": "E-001(x150)",
+      "spec": "S/W(B)",
+      "size": "200x160x130",
+      "packUnit": null,
+      "price": 28188.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-007(x100)",
+      "spec": "S/W(B)",
+      "size": "210x210x120",
+      "packUnit": null,
+      "price": 25750.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-008(x120)",
+      "spec": "S/W(B)",
+      "size": "220x160x140",
+      "packUnit": null,
+      "price": 25750.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-014(x90)",
+      "spec": "S/W(B)",
+      "size": "230x200x180",
+      "packUnit": null,
+      "price": 27213.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-018(x70)",
+      "spec": "S/W(B)",
+      "size": "245x245x250",
+      "packUnit": null,
+      "price": 29175.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-023(x100)",
+      "spec": "S/W(B)",
+      "size": "250x210x120",
+      "packUnit": null,
+      "price": 27375.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-024(x100)",
+      "spec": "S/W(B)",
+      "size": "250x230x150",
+      "packUnit": null,
+      "price": 31625.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-026(x80)",
+      "spec": "S/W(B)",
+      "size": "250x250x100",
+      "packUnit": null,
+      "price": 25800.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-028(x100)",
+      "spec": "S/W(B)",
+      "size": "260x160x140",
+      "packUnit": null,
+      "price": 24250.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-034(x70)",
+      "spec": "S/W(B)",
+      "size": "260x260x200",
+      "packUnit": null,
+      "price": 29263.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-040(x100)",
+      "spec": "S/W(B)",
+      "size": "270x200x180",
+      "packUnit": null,
+      "price": 31125.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-042(x100)",
+      "spec": "S/W(B)",
+      "size": "270x240x100",
+      "packUnit": null,
+      "price": 29875.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-049(x100)",
+      "spec": "S/W(B)",
+      "size": "280x220x110",
+      "packUnit": null,
+      "price": 28875.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-051(x80)",
+      "spec": "S/W(B)",
+      "size": "290x220x200",
+      "packUnit": null,
+      "price": 29300.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-060(x80)",
+      "spec": "S/W(B)",
+      "size": "300x240x130",
+      "packUnit": null,
+      "price": 28200.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-065(x80)",
+      "spec": "S/W(B)",
+      "size": "300x280x100",
+      "packUnit": null,
+      "price": 30700.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-066(x80)",
+      "spec": "S/W(B)",
+      "size": "300x300x140",
+      "packUnit": null,
+      "price": 34300.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-073(x80)",
+      "spec": "S/W(B)",
+      "size": "310x200x160",
+      "packUnit": null,
+      "price": 27100.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-076(x80)",
+      "spec": "S/W(B)",
+      "size": "310x220x130",
+      "packUnit": null,
+      "price": 26800.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-077(x80)",
+      "spec": "S/W(B)",
+      "size": "310x220x150",
+      "packUnit": null,
+      "price": 27800.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-078(x75)",
+      "spec": "S/W(B)",
+      "size": "310x220x200",
+      "packUnit": null,
+      "price": 28750.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-081(x75)",
+      "spec": "S/W(B)",
+      "size": "310x270x150",
+      "packUnit": null,
+      "price": 30625.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-085(x80)",
+      "spec": "S/W(B)",
+      "size": "320x220x150",
+      "packUnit": null,
+      "price": 28200.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-086(x80)",
+      "spec": "S/W(B)",
+      "size": "320x220x200",
+      "packUnit": null,
+      "price": 30500.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-090(x75)",
+      "spec": "S/W(B)",
+      "size": "320x240x200",
+      "packUnit": null,
+      "price": 31094.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-101(x80)",
+      "spec": "S/W(B)",
+      "size": "330x230x130",
+      "packUnit": null,
+      "price": 28900.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-102(x50)",
+      "spec": "S/W(A)",
+      "size": "330x270x220",
+      "packUnit": null,
+      "price": 29330.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-106(x120)",
+      "spec": "S/W(B)",
+      "size": "340x170x110",
+      "packUnit": null,
+      "price": 29800.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-110(x80)",
+      "spec": "S/W(B)",
+      "size": "340x260x100",
+      "packUnit": null,
+      "price": 30300.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-112(x70)",
+      "spec": "S/W(B)",
+      "size": "340x260x150",
+      "packUnit": null,
+      "price": 29788.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-116(x90)",
+      "spec": "S/W(B)",
+      "size": "350x200x150",
+      "packUnit": null,
+      "price": 29913.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-124(x60)",
+      "spec": "S/W(B)",
+      "size": "350x300x150",
+      "packUnit": null,
+      "price": 30550.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-128(x70)",
+      "spec": "S/W(B)",
+      "size": "360x240x140",
+      "packUnit": null,
+      "price": 28563.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-130(x60)",
+      "spec": "S/W(B)",
+      "size": "360x240x230",
+      "packUnit": null,
+      "price": 28900.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-131(x50)",
+      "spec": "S/W(B)",
+      "size": "360x300x210",
+      "packUnit": null,
+      "price": 29438.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-132(x50)",
+      "spec": "S/W(B)",
+      "size": "360x300x240",
+      "packUnit": null,
+      "price": 30750.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-133(x50)",
+      "spec": "S/W(B)",
+      "size": "360x360x120",
+      "packUnit": null,
+      "price": 29875.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-134(x75)",
+      "spec": "S/W(B)",
+      "size": "370x250x150",
+      "packUnit": null,
+      "price": 31375.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-138(x70)",
+      "spec": "S/W(B)",
+      "size": "380x250x100",
+      "packUnit": null,
+      "price": 27425.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-139(x70)",
+      "spec": "S/W(B)",
+      "size": "380x250x160",
+      "packUnit": null,
+      "price": 30838.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-140(x60)",
+      "spec": "S/W(B)",
+      "size": "380x270x200",
+      "packUnit": null,
+      "price": 30550.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-141(x50)",
+      "spec": "S/W(B)",
+      "size": "380x320x170",
+      "packUnit": null,
+      "price": 29313.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-143(x50)",
+      "spec": "S/W(A)",
+      "size": "400x200x150",
+      "packUnit": null,
+      "price": 21813.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-144(x60)",
+      "spec": "S/W(A)",
+      "size": "400x200x200",
+      "packUnit": null,
+      "price": 26800.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-148(x50)",
+      "spec": "S/W(A)",
+      "size": "400x250x200",
+      "packUnit": null,
+      "price": 27500.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-151(x40)",
+      "spec": "S/W(A)",
+      "size": "400x300x180",
+      "packUnit": null,
+      "price": 25650.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-152(x40)",
+      "spec": "S/W(A)",
+      "size": "400x300x300",
+      "packUnit": null,
+      "price": 38480.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-153(x40)",
+      "spec": "S/W(A)",
+      "size": "400x310x210",
+      "packUnit": null,
+      "price": 32830.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-156(x40)",
+      "spec": "S/W(A)",
+      "size": "400x350x200",
+      "packUnit": null,
+      "price": 36380.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-157(x35)",
+      "spec": "S/W(A)",
+      "size": "400x350x300",
+      "packUnit": null,
+      "price": 38193.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-166(x40)",
+      "spec": "S/W(B)",
+      "size": "420x370x150",
+      "packUnit": null,
+      "price": 28450.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-168(x35)",
+      "spec": "S/W(A)",
+      "size": "450x350x200",
+      "packUnit": null,
+      "price": 34986.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-174(x30)",
+      "spec": "S/W(A)",
+      "size": "450x320x200",
+      "packUnit": null,
+      "price": 29055.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-175(x35)",
+      "spec": "S/W(A)",
+      "size": "450x320x300",
+      "packUnit": null,
+      "price": 37624.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-178(x20)",
+      "spec": "S/W(A)",
+      "size": "460x350x350",
+      "packUnit": null,
+      "price": 26200.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-182(x40)",
+      "spec": "S/W(A)",
+      "size": "500x300x150",
+      "packUnit": null,
+      "price": 32880.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-183(x40)",
+      "spec": "S/W(A)",
+      "size": "500x300x200",
+      "packUnit": null,
+      "price": 35630.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-186(x30)",
+      "spec": "S/W(A)",
+      "size": "500x320x220",
+      "packUnit": null,
+      "price": 31155.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-189(x30)",
+      "spec": "S/W(A)",
+      "size": "500x350x250",
+      "packUnit": null,
+      "price": 35155.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-190(x30)",
+      "spec": "S/W(A)",
+      "size": "500x400x120",
+      "packUnit": null,
+      "price": 31680.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-192(x20)",
+      "spec": "S/W(A)",
+      "size": "500x400x300",
+      "packUnit": null,
+      "price": 30030.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-193(x20)",
+      "spec": "S/W(A)",
+      "size": "500x500x250",
+      "packUnit": null,
+      "price": 34280.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-197(x30)",
+      "spec": "S/W(A)",
+      "size": "510x400x180",
+      "packUnit": null,
+      "price": 35380.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-198(x20)",
+      "spec": "S/W(A)",
+      "size": "510x410x310",
+      "packUnit": null,
+      "price": 30955.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-199(x30)",
+      "spec": "S/W(A)",
+      "size": "520x330x300",
+      "packUnit": null,
+      "price": 36168.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-205(x25)",
+      "spec": "S/W(A)",
+      "size": "520x380x420",
+      "packUnit": null,
+      "price": 39475.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-206(x20)",
+      "spec": "S/W(A)",
+      "size": "520x410x200",
+      "packUnit": null,
+      "price": 28330.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-209(x20)",
+      "spec": "S/W(A)",
+      "size": "520x450x400",
+      "packUnit": null,
+      "price": 36230.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-213(x20)",
+      "spec": "S/W(A)",
+      "size": "550x420x350",
+      "packUnit": null,
+      "price": 34330.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-216(x15)",
+      "spec": "S/W(A)",
+      "size": "550x550x390",
+      "packUnit": null,
+      "price": 35455.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-221(x25)",
+      "spec": "S/W(A)",
+      "size": "570x340x250",
+      "packUnit": null,
+      "price": 30755.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-224(x35)",
+      "spec": "S/W(A)",
+      "size": "600x250x120",
+      "packUnit": null,
+      "price": 22306.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-225(x20)",
+      "spec": "S/W(A)",
+      "size": "600x400x250",
+      "packUnit": null,
+      "price": 32030.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-229(x20)",
+      "spec": "S/W(A)",
+      "size": "600x500x300",
+      "packUnit": null,
+      "price": 41375.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-230(x15)",
+      "spec": "S/W(A)",
+      "size": "600x510x440",
+      "packUnit": null,
+      "price": 39230.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-235(x20)",
+      "spec": "S/W(A)",
+      "size": "640x360x220",
+      "packUnit": null,
+      "price": 28100.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-243(x10)",
+      "spec": "S/W(A)",
+      "size": "700x500x350",
+      "packUnit": null,
+      "price": 25905.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-247(x30)",
+      "spec": "S/W(A)",
+      "size": "750x200x180",
+      "packUnit": null,
+      "price": 25725.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-251(x10)",
+      "spec": "S/W(A)",
+      "size": "750x520x420",
+      "packUnit": null,
+      "price": 30243.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄002호(x300)",
+      "spec": "S/W(B)",
+      "size": "140x100x70",
+      "packUnit": null,
+      "price": 34000.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄004호(x230)",
+      "spec": "S/W(B)",
+      "size": "150x120x120",
+      "packUnit": null,
+      "price": 33200.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄005호(x230)",
+      "spec": "S/W(B)",
+      "size": "150x130x100",
+      "packUnit": null,
+      "price": 33488.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄006호(x220)",
+      "spec": "S/W(B)",
+      "size": "160x140x60",
+      "packUnit": null,
+      "price": 31250.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄007호(x280)",
+      "spec": "S/W(B)",
+      "size": "160x100x60",
+      "packUnit": null,
+      "price": 31450.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄009호(x200)",
+      "spec": "S/W(B)",
+      "size": "160x140x100",
+      "packUnit": null,
+      "price": 32500.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄010호(x190)",
+      "spec": "S/W(B)",
+      "size": "170x130x120",
+      "packUnit": null,
+      "price": 31400.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄011호(x230)",
+      "spec": "S/W(B)",
+      "size": "180x100x100",
+      "packUnit": null,
+      "price": 31188.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄012호(x170)",
+      "spec": "S/W(B)",
+      "size": "180x150x120",
+      "packUnit": null,
+      "price": 32875.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄014호(x150)",
+      "spec": "S/W(B)",
+      "size": "180x180x100",
+      "packUnit": null,
+      "price": 30250.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄016호(x210)",
+      "spec": "S/W(B)",
+      "size": "190x120x90",
+      "packUnit": null,
+      "price": 31450.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄017호(x250)",
+      "spec": "S/W(B)",
+      "size": "200x100x80",
+      "packUnit": null,
+      "price": 31625.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄018호(x210)",
+      "spec": "S/W(B)",
+      "size": "200x130x80",
+      "packUnit": null,
+      "price": 31713.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄019호(x170)",
+      "spec": "S/W(B)",
+      "size": "200x130x140",
+      "packUnit": null,
+      "price": 32025.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄020호(x150)",
+      "spec": "S/W(B)",
+      "size": "200x180x80",
+      "packUnit": null,
+      "price": 30063.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄021호(x130)",
+      "spec": "S/W(B)",
+      "size": "200x180x120",
+      "packUnit": null,
+      "price": 29438.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄023호(x100)",
+      "spec": "S/W(B)",
+      "size": "200x200x165",
+      "packUnit": null,
+      "price": 28750.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄024호(x160)",
+      "spec": "S/W(B)",
+      "size": "200x150x100",
+      "packUnit": null,
+      "price": 29000.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄027호(x180)",
+      "spec": "S/W(B)",
+      "size": "220x110x100",
+      "packUnit": null,
+      "price": 29125.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄028호(x200)",
+      "spec": "S/W(B)",
+      "size": "220x120x70",
+      "packUnit": null,
+      "price": 29250.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄029호(x160)",
+      "spec": "S/W(B)",
+      "size": "220x160x90",
+      "packUnit": null,
+      "price": 31400.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄030호(x180)",
+      "spec": "S/W(B)",
+      "size": "230x120x110",
+      "packUnit": null,
+      "price": 31375.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄031호(x180)",
+      "spec": "S/W(B)",
+      "size": "230x160x70",
+      "packUnit": null,
+      "price": 33175.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄032호(x150)",
+      "spec": "S/W(B)",
+      "size": "230x160x120",
+      "packUnit": null,
+      "price": 31563.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄033호(x120)",
+      "spec": "S/W(B)",
+      "size": "230x170x160",
+      "packUnit": null,
+      "price": 30850.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄035호(x130)",
+      "spec": "S/W(B)",
+      "size": "230x195x90",
+      "packUnit": null,
+      "price": 31713.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄037호(x180)",
+      "spec": "S/W(B)",
+      "size": "240x140x100",
+      "packUnit": null,
+      "price": 34075.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄038호(x130)",
+      "spec": "S/W(B)",
+      "size": "240x160x150",
+      "packUnit": null,
+      "price": 31388.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄039호(x120)",
+      "spec": "S/W(B)",
+      "size": "240x200x120",
+      "packUnit": null,
+      "price": 31900.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄040호(x160)",
+      "spec": "S/W(B)",
+      "size": "240x170x70",
+      "packUnit": null,
+      "price": 31400.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄042호(x110)",
+      "spec": "S/W(B)",
+      "size": "250x180x150",
+      "packUnit": null,
+      "price": 31663.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄043호(x120)",
+      "spec": "S/W(B)",
+      "size": "250x200x100",
+      "packUnit": null,
+      "price": 30400.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄044호(x90)",
+      "spec": "S/W(B)",
+      "size": "250x230x150",
+      "packUnit": null,
+      "price": 31488.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄046호(x140)",
+      "spec": "S/W(B)",
+      "size": "260x160x120",
+      "packUnit": null,
+      "price": 32500.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄047호(x110)",
+      "spec": "S/W(B)",
+      "size": "260x180x150",
+      "packUnit": null,
+      "price": 30700.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄048호(x80)",
+      "spec": "S/W(B)",
+      "size": "260x220x180",
+      "packUnit": null,
+      "price": 28400.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄049호(x110)",
+      "spec": "S/W(B)",
+      "size": "270x200x120",
+      "packUnit": null,
+      "price": 31113.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄051호(x80)",
+      "spec": "S/W(B)",
+      "size": "270x240x150",
+      "packUnit": null,
+      "price": 30500.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄052호(x160)",
+      "spec": "S/W(B)",
+      "size": "280x130x90",
+      "packUnit": null,
+      "price": 29800.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄053호(x120)",
+      "spec": "S/W(B)",
+      "size": "280x160x150",
+      "packUnit": null,
+      "price": 31150.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄056호(x110)",
+      "spec": "S/W(B)",
+      "size": "280x180x150",
+      "packUnit": null,
+      "price": 31525.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄057호(x100)",
+      "spec": "S/W(B)",
+      "size": "280x180x185",
+      "packUnit": null,
+      "price": 32500.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄058호(x140)",
+      "spec": "S/W(B)",
+      "size": "285x160x90",
+      "packUnit": null,
+      "price": 31100.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄061호(x80)",
+      "spec": "S/W(B)",
+      "size": "290x260x200",
+      "packUnit": null,
+      "price": 33500.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄062호(x130)",
+      "spec": "S/W(B)",
+      "size": "295x195x90",
+      "packUnit": null,
+      "price": 31550.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄063호(x120)",
+      "spec": "S/W(B)",
+      "size": "300x200x120",
+      "packUnit": null,
+      "price": 32350.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄064호(x100)",
+      "spec": "S/W(B)",
+      "size": "300x200x150",
+      "packUnit": null,
+      "price": 30125.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄066호(x120)",
+      "spec": "S/W(B)",
+      "size": "300x225x60",
+      "packUnit": null,
+      "price": 31150.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄068호(x90)",
+      "spec": "S/W(B)",
+      "size": "300x250x150",
+      "packUnit": null,
+      "price": 32950.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄070호(x100)",
+      "spec": "S/W(B)",
+      "size": "310x200x195",
+      "packUnit": null,
+      "price": 38630.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄071호(x80)",
+      "spec": "S/W(B)",
+      "size": "310x215x240",
+      "packUnit": null,
+      "price": 32400.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄072호(x120)",
+      "spec": "S/W(B)",
+      "size": "320x160x150",
+      "packUnit": null,
+      "price": 30700.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄073호(x120)",
+      "spec": "S/W(B)",
+      "size": "320x220x80",
+      "packUnit": null,
+      "price": 32500.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄075호(x100)",
+      "spec": "S/W(B)",
+      "size": "320x240x100",
+      "packUnit": null,
+      "price": 32000.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄076호(x80)",
+      "spec": "S/W(B)",
+      "size": "320x240x190",
+      "packUnit": null,
+      "price": 32600.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄081호(x80)",
+      "spec": "S/W(B)",
+      "size": "330x250x150",
+      "packUnit": null,
+      "price": 31400.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄082호(x60)",
+      "spec": "S/W(B)",
+      "size": "330x250x250",
+      "packUnit": null,
+      "price": 29950.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄083호(x90)",
+      "spec": "S/W(B)",
+      "size": "340x260x70",
+      "packUnit": null,
+      "price": 30475.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄085호(x90)",
+      "spec": "S/W(B)",
+      "size": "350x220x120",
+      "packUnit": null,
+      "price": 30025.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄086호(x90)",
+      "spec": "S/W(B)",
+      "size": "350x220x160",
+      "packUnit": null,
+      "price": 33063.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄087호(x90)",
+      "spec": "S/W(B)",
+      "size": "350x250x100",
+      "packUnit": null,
+      "price": 31713.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄089호(x70)",
+      "spec": "S/W(B)",
+      "size": "350x270x150",
+      "packUnit": null,
+      "price": 30488.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄090호(x70)",
+      "spec": "S/W(B)",
+      "size": "350x270x180",
+      "packUnit": null,
+      "price": 33113.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄091호(x60)",
+      "spec": "S/W(B)",
+      "size": "350x327x129",
+      "packUnit": null,
+      "price": 31450.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄092호(x80)",
+      "spec": "S/W(B)",
+      "size": "360x300x100",
+      "packUnit": null,
+      "price": 34400.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄093호(x60)",
+      "spec": "S/W(B)",
+      "size": "360x300x150",
+      "packUnit": null,
+      "price": 30850.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄094호(x50)",
+      "spec": "S/W(B)",
+      "size": "360x300x300",
+      "packUnit": null,
+      "price": 33375.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄097호(x50)",
+      "spec": "S/W(B)",
+      "size": "390x270x300",
+      "packUnit": null,
+      "price": 31438.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄098호(x70)",
+      "spec": "S/W(B)",
+      "size": "400x300x100",
+      "packUnit": null,
+      "price": 32500.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄099호(x60)",
+      "spec": "S/W(B)",
+      "size": "400x300x150",
+      "packUnit": null,
+      "price": 32200.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄100호(x60)",
+      "spec": "S/W(B)",
+      "size": "400x300x200",
+      "packUnit": null,
+      "price": 40080.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄101호(x70)",
+      "spec": "S/W(B)",
+      "size": "420x290x140",
+      "packUnit": null,
+      "price": 35125.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄102호(x50)",
+      "spec": "S/W(B)",
+      "size": "430x340x200",
+      "packUnit": null,
+      "price": 40155.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄103호(x80)",
+      "spec": "S/W(B)",
+      "size": "440x240x150",
+      "packUnit": null,
+      "price": 34400.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄104호(x60)",
+      "spec": "S/W(B)",
+      "size": "450x300x100",
+      "packUnit": null,
+      "price": 30475.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄105호(x40)",
+      "spec": "S/W(B)",
+      "size": "440x350x270",
+      "packUnit": null,
+      "price": 37980.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄106호(x40)",
+      "spec": "S/W(B)",
+      "size": "450x400x150",
+      "packUnit": null,
+      "price": 34650.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄107호(x55)",
+      "spec": "S/W(B)",
+      "size": "460x350x100",
+      "packUnit": null,
+      "price": 39068.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄108호(x50)",
+      "spec": "S/W(B)",
+      "size": "460x350x170",
+      "packUnit": null,
+      "price": 39843.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄109호(x40)",
+      "spec": "S/W(B)",
+      "size": "460x350x250",
+      "packUnit": null,
+      "price": 38280.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄110호(x30)",
+      "spec": "S/W(B)",
+      "size": "460x350x350",
+      "packUnit": null,
+      "price": 32700.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄111호(x50)",
+      "spec": "S/W(B)",
+      "size": "480x300x200",
+      "packUnit": null,
+      "price": 32375.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄112호(x50)",
+      "spec": "S/W(B)",
+      "size": "480x350x150",
+      "packUnit": null,
+      "price": 39655.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄113호(x40)",
+      "spec": "S/W(B)",
+      "size": "480x400x200",
+      "packUnit": null,
+      "price": 40480.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄114호(x50)",
+      "spec": "S/W(B)",
+      "size": "500x300x150",
+      "packUnit": null,
+      "price": 31000.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄011-1호(x210)",
+      "spec": "S/W(B)",
+      "size": "180x150x70",
+      "packUnit": null,
+      "price": 32500.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄036-2호(x200)",
+      "spec": "S/W(B)",
+      "size": "240x120x100",
+      "packUnit": null,
+      "price": 32750.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "D-534525(x10)",
+      "spec": "D/W(BA)",
+      "size": "530x450x250",
+      "packUnit": null,
+      "price": 26109.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "D-574735(x10)",
+      "spec": "D/W(BA)",
+      "size": "570x470x350",
+      "packUnit": null,
+      "price": 31154.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "D-604035(x10)",
+      "spec": "D/W(BA)",
+      "size": "600x400x350",
+      "packUnit": null,
+      "price": 27230.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "D-605045(x10)",
+      "spec": "D/W(BA)",
+      "size": "600x500x450",
+      "packUnit": null,
+      "price": 36927.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "D-654540(x10)",
+      "spec": "D/W(BA)",
+      "size": "650x450x400",
+      "packUnit": null,
+      "price": 33007.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "D-724840(x10)",
+      "spec": "D/W(BA)",
+      "size": "720x480x400",
+      "packUnit": null,
+      "price": 36387.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "D-755242(x10)",
+      "spec": "D/W(BA)",
+      "size": "750x520x420",
+      "packUnit": null,
+      "price": 39936.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄_우체국-1호(x120)",
+      "spec": "S/W(B)",
+      "size": "220x190x90",
+      "packUnit": null,
+      "price": 29392.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄_우체국-2호(x100)",
+      "spec": "S/W(B)",
+      "size": "270x180x150",
+      "packUnit": null,
+      "price": 30770.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄_우체국-3호(x50)",
+      "spec": "S/W(B)",
+      "size": "340x250x210",
+      "packUnit": null,
+      "price": 28755.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄_우체국-4호(x30)",
+      "spec": "S/W(A)",
+      "size": "410x310x280",
+      "packUnit": null,
+      "price": 30051.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄_우체국-5호(x16)",
+      "spec": "D/W(BA)",
+      "size": "480x380x340",
+      "packUnit": null,
+      "price": 37154.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄_우체국-6호(x11)",
+      "spec": "D/W(BA)",
+      "size": "520x480x400",
+      "packUnit": null,
+      "price": 35537.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-006(x120)",
+      "spec": "S/W(B)",
+      "size": "210x155x100",
+      "packUnit": null,
+      "price": 22950.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-019(x120)",
+      "spec": "S/W(B)",
+      "size": "250x190x120",
+      "packUnit": null,
+      "price": 29100.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-020(x90)",
+      "spec": "S/W(B)",
+      "size": "250x190x190",
+      "packUnit": null,
+      "price": 27225.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-041(x120)",
+      "spec": "S/W(B)",
+      "size": "270x230x130",
+      "packUnit": null,
+      "price": 40530.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-043(x100)",
+      "spec": "S/W(B)",
+      "size": "280x200x150",
+      "packUnit": null,
+      "price": 31500.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-050(x100)",
+      "spec": "S/W(B)",
+      "size": "280x230x170",
+      "packUnit": null,
+      "price": 37955.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-064(x50)",
+      "spec": "S/W(B)",
+      "size": "300x260x260",
+      "packUnit": null,
+      "price": 26500.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-082(x80)",
+      "spec": "S/W(B)",
+      "size": "320x220x120",
+      "packUnit": null,
+      "price": 26800.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-129(x75)",
+      "spec": "S/W(B)",
+      "size": "360x240x200",
+      "packUnit": null,
+      "price": 32813.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-154(x45)",
+      "spec": "S/W(A)",
+      "size": "400x310x220",
+      "packUnit": null,
+      "price": 38036.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-179(x45)",
+      "spec": "S/W(A)",
+      "size": "470x360x100",
+      "packUnit": null,
+      "price": 37755.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-181(x30)",
+      "spec": "S/W(A)",
+      "size": "480x360x230",
+      "packUnit": null,
+      "price": 33405.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-191(x30)",
+      "spec": "S/W(A)",
+      "size": "500x400x150",
+      "packUnit": null,
+      "price": 33593.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-023-1(x120)",
+      "spec": "S/W(B)",
+      "size": "250x220x160",
+      "packUnit": null,
+      "price": 36980.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-156-1(x30)",
+      "spec": "S/W(A)",
+      "size": "400x350x250",
+      "packUnit": null,
+      "price": 30893.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-166-1(x30)",
+      "spec": "S/W(A)",
+      "size": "430x370x250",
+      "packUnit": null,
+      "price": 33518.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-197-1(x30)",
+      "spec": "S/W(A)",
+      "size": "510x400x200",
+      "packUnit": null,
+      "price": 36030.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-101-1(x50)",
+      "spec": "S/W(B)",
+      "size": "330x265x185",
+      "packUnit": null,
+      "price": 25500.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "E-139-1(x70)",
+      "spec": "S/W(B)",
+      "size": "380x270x170",
+      "packUnit": null,
+      "price": 33075.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄108-1호(x40)",
+      "spec": "S/W(A)",
+      "size": "460x350x170",
+      "packUnit": null,
+      "price": 37580.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄109-1호(x30)",
+      "spec": "S/W(B)",
+      "size": "460x350x250",
+      "packUnit": null,
+      "price": 29680.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄065-1호(x100)",
+      "spec": "S/W(B)",
+      "size": "300x215x120",
+      "packUnit": null,
+      "price": 29625.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "무인쇄111-1호(x40)",
+      "spec": "S/W(A)",
+      "size": "480x300x200",
+      "packUnit": null,
+      "price": 35430.0,
+      "shipping": "무료배송"
+    },
+    {
+      "name": "D-755215(x10)",
+      "spec": "D/W(BA)",
+      "size": "750x520x150",
+      "packUnit": null,
+      "price": 28755.0,
+      "shipping": "무료배송"
+    }
+  ],
+  "이고다박스": [
+    {
+      "name": "D101",
+      "spec": "A골",
+      "size": "590x470x315",
+      "packUnit": null,
+      "price": 830.0,
+      "shipping": null
+    },
+    {
+      "name": "D102",
+      "spec": "A골",
+      "size": "595x495x500",
+      "packUnit": null,
+      "price": 1185.0,
+      "shipping": null
+    },
+    {
+      "name": "D103",
+      "spec": "A골",
+      "size": "1000x215x220",
+      "packUnit": null,
+      "price": 835.0,
+      "shipping": null
+    },
+    {
+      "name": "D103-1",
+      "spec": "A골",
+      "size": "1000x155x155",
+      "packUnit": null,
+      "price": 695.0,
+      "shipping": null
+    },
+    {
+      "name": "D104",
+      "spec": "A골",
+      "size": "650x460x380",
+      "packUnit": null,
+      "price": 1090.0,
+      "shipping": null
+    },
+    {
+      "name": "D01",
+      "spec": "B골",
+      "size": "245x170x90",
+      "packUnit": null,
+      "price": 116.0,
+      "shipping": null
+    },
+    {
+      "name": "D02",
+      "spec": "B골",
+      "size": "280x210x60",
+      "packUnit": null,
+      "price": 128.0,
+      "shipping": null
+    },
+    {
+      "name": "D03",
+      "spec": "B골",
+      "size": "280x210x120",
+      "packUnit": null,
+      "price": 152.0,
+      "shipping": null
+    },
+    {
+      "name": "D04",
+      "spec": "B골",
+      "size": "280x210x200",
+      "packUnit": null,
+      "price": 190.0,
+      "shipping": null
+    },
+    {
+      "name": "D05",
+      "spec": "B골",
+      "size": "320x240x60",
+      "packUnit": null,
+      "price": 170.0,
+      "shipping": null
+    },
+    {
+      "name": "D05-1",
+      "spec": "B골",
+      "size": "320x240x90",
+      "packUnit": null,
+      "price": 180.0,
+      "shipping": null
+    },
+    {
+      "name": "D06",
+      "spec": "B골",
+      "size": "320x240x120",
+      "packUnit": null,
+      "price": 202.0,
+      "shipping": null
+    },
+    {
+      "name": "D07",
+      "spec": "B골",
+      "size": "320x240x200",
+      "packUnit": null,
+      "price": 270.0,
+      "shipping": null
+    },
+    {
+      "name": "D08",
+      "spec": "B골",
+      "size": "370x320x120",
+      "packUnit": null,
+      "price": 317.0,
+      "shipping": null
+    },
+    {
+      "name": "D09",
+      "spec": "B골",
+      "size": "470x340x120",
+      "packUnit": null,
+      "price": 400.0,
+      "shipping": null
+    },
+    {
+      "name": "D10",
+      "spec": "B골",
+      "size": "320x300x120",
+      "packUnit": null,
+      "price": 281.0,
+      "shipping": null
+    },
+    {
+      "name": "우체국1호",
+      "spec": "B골",
+      "size": "270x190x90",
+      "packUnit": null,
+      "price": 123.0,
+      "shipping": null
+    },
+    {
+      "name": "우체국2호",
+      "spec": "B골",
+      "size": "270x180x150",
+      "packUnit": null,
+      "price": 168.0,
+      "shipping": null
+    },
+    {
+      "name": "우체국3호",
+      "spec": "B골",
+      "size": "320x250x210",
+      "packUnit": null,
+      "price": 292.0,
+      "shipping": null
+    },
+    {
+      "name": "우체국4호",
+      "spec": "B골",
+      "size": "410x310x280",
+      "packUnit": null,
+      "price": 529.0,
+      "shipping": null
+    },
+    {
+      "name": "우체국5호",
+      "spec": "DW골",
+      "size": "480x380x340",
+      "packUnit": null,
+      "price": 1117.0,
+      "shipping": null
+    }
   ]
 };
 
@@ -1288,8 +3337,16 @@ function getCategoryMeta(cat) {
 }
 
 function formatKRW(num) {
-  if (num === null || num === undefined || isNaN(num)) return "-";
+  if (num === null || num === undefined || num === "" || isNaN(num)) return "-";
   return "₩" + Number(num).toLocaleString("ko-KR");
+}
+
+function formatShipping(val) {
+  if (val === null || val === undefined || val === "") return "-";
+  if (typeof val === "number" || (!isNaN(Number(val)) && typeof val === "string" && val.trim() !== "")) {
+    return "₩" + Number(val).toLocaleString("ko-KR");
+  }
+  return String(val);
 }
 
 function formatNumber(num) {
@@ -1463,6 +3520,9 @@ function renderSubgroupTableHTML(sg, cat) {
   const isTape = cat === "박스테이프";
   const isRoll = cat.includes("에어캡롤");
   const isFabric = cat === "에어캡원단" || cat === "은박원단";
+  const isPad = cat === "에어캡패드";
+  const isBoxSIB = cat.includes("박스(에스아이비)");
+  const isBoxIgoda = cat === "이고다박스";
 
   const hasPack = sg.items.some((i) => i.packUnit !== null && i.packUnit !== undefined);
   const hasShipping = sg.items.some((i) => i.shipping !== null && i.shipping !== undefined);
@@ -1476,6 +3536,10 @@ function renderSubgroupTableHTML(sg, cat) {
     theadHTML += `<th>품명</th><th>사이즈 규격 (mm)</th><th style="width: 65px;">두께</th>`;
   } else if (isRoll || isFabric) {
     theadHTML += `<th>사이즈 규격 (폭 × 길이)</th><th style="width: 75px;">두께</th>`;
+  } else if (isPad) {
+    theadHTML += `<th>품명</th><th>사이즈 규격 (cm)</th><th style="width: 70px;">두께</th>`;
+  } else if (isBoxSIB || isBoxIgoda) {
+    theadHTML += `<th>품명 (규격명)</th><th>사이즈 (mm)</th><th style="width: 85px;">골/재질</th>`;
   } else {
     theadHTML += `<th>품명 / 규격</th><th style="width: 75px;">사양</th>`;
   }
@@ -1508,6 +3572,10 @@ function renderSubgroupTableHTML(sg, cat) {
         rowHTML += `<td><strong>${item.name}</strong></td><td class="numeric">${item.size}</td><td><span class="item-spec-chip">${item.spec}</span></td>`;
       } else if (isRoll || isFabric) {
         rowHTML += `<td><strong class="numeric">${item.size}</strong></td><td><span class="item-spec-chip">${item.spec}</span></td>`;
+      } else if (isPad) {
+        rowHTML += `<td><strong>${item.name}</strong></td><td class="numeric">${item.size}</td><td><span class="item-spec-chip">${item.spec}</span></td>`;
+      } else if (isBoxSIB || isBoxIgoda) {
+        rowHTML += `<td><strong>${item.name}</strong></td><td class="numeric">${item.size}</td><td><span class="item-spec-chip">${item.spec}</span></td>`;
       } else {
         rowHTML += `<td><strong>${item.name} ${item.size ? `(${item.size})` : ""}</strong></td><td><span class="item-spec-chip">${item.spec || "-"}</span></td>`;
       }
@@ -1524,8 +3592,10 @@ function renderSubgroupTableHTML(sg, cat) {
       }
 
       if (hasShipping) {
-        const shippingStr = item.shipping !== null && item.shipping !== undefined ? formatKRW(item.shipping) : "-";
-        rowHTML += `<td class="text-right numeric shipping-badge">${shippingStr}</td>`;
+        const shippingStr = formatShipping(item.shipping);
+        const isFree = String(item.shipping).includes("무료");
+        const extraStyle = isFree ? 'style="color:#00875a; font-weight:600;"' : '';
+        rowHTML += `<td class="text-right numeric shipping-badge" ${extraStyle}>${shippingStr}</td>`;
       }
 
       rowHTML += `</tr>`;
@@ -1593,12 +3663,30 @@ function renderBoardView(filteredItems) {
         if (muji.length) subGroups.push({ title: "무지 쇼핑백 시리즈", subtitle: "130g 규격 (mm)", items: muji });
         if (dosirak.length) subGroups.push({ title: "도시락 쇼핑백 시리즈", subtitle: "130g 규격 (mm)", items: dosirak });
         if (mart.length) subGroups.push({ title: "마트 쇼핑백 시리즈", subtitle: "130g 규격 (mm)", items: mart });
+      } else if (cat === "에어캡패드") {
+        subGroups = specs.map((sp) => ({
+          title: `패드 두께 ${sp}`,
+          subtitle: `에어캡패드 ${sp} 규격 (호수별)`,
+          items: catItems.filter((i) => i.spec === sp)
+        }));
       } else if (cat === "박스테이프") {
         subGroups.push({
           title: "박스테이프 전 규격",
           subtitle: "포장단위(박스) 및 롤당 단가 · 택배비",
           items: catItems
         });
+      } else if (cat.includes("박스(에스아이비)")) {
+        subGroups = specs.sort().map((sp) => ({
+          title: `재질 ${sp}`,
+          subtitle: `SIB 골판지 규격 (${catItems.filter((i) => i.spec === sp).length}종 · 무료배송)`,
+          items: catItems.filter((i) => i.spec === sp)
+        }));
+      } else if (cat === "이고다박스") {
+        subGroups = specs.sort().map((sp) => ({
+          title: `골 종류 ${sp}`,
+          subtitle: `이고다 규격박스 (${catItems.filter((i) => i.spec === sp).length}종)`,
+          items: catItems.filter((i) => i.spec === sp)
+        }));
       } else if (specs.length > 1) {
         subGroups = specs.map((sp) => ({
           title: `두께/사양 ${sp}`,
@@ -1769,8 +3857,8 @@ async function syncFromGoogleSheets() {
 
       headers.forEach((h, idx) => {
         if (h.includes("품명")) nameIdx = idx;
-        else if (h.includes("두께") || h.includes("재질")) specIdx = idx;
-        else if (h.includes("사이즈")) sizeIdx = idx;
+        else if (h.includes("두께") || h.includes("재질") || h.includes("골")) specIdx = idx;
+        else if (h.includes("사이즈") || h.includes("규격")) sizeIdx = idx;
         else if (h.includes("포장")) packIdx = idx;
         else if (h.includes("단가")) priceIdx = idx;
         else if (h.includes("택배")) shipIdx = idx;
@@ -1799,8 +3887,13 @@ async function syncFromGoogleSheets() {
 
         let shipVal = null;
         if (shipIdx !== -1 && shipIdx < r.length && r[shipIdx]) {
-          const s = parseFloat(String(r[shipIdx]).replace(/,/g, ""));
-          if (!isNaN(s)) shipVal = s;
+          const rawShip = String(r[shipIdx]).trim();
+          const s = parseFloat(rawShip.replace(/,/g, ""));
+          if (!isNaN(s)) {
+            shipVal = s;
+          } else if (rawShip) {
+            shipVal = rawShip;
+          }
         }
 
         if (priceVal > 0) {
